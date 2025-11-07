@@ -4,14 +4,21 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AuthContext } from "./context/authentication/AuthContext";
+
+const data = {
+    isAuth: false,
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <App/>
-    </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Router>
+            <AuthContext.Provider value={data}>
+                <App/>
+            </AuthContext.Provider>
+        </Router>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
