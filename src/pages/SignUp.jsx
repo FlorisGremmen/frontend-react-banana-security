@@ -15,7 +15,7 @@ function SignUp() {
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque consectetur, dolore eaque eligendi
         harum, numquam, placeat quisquam repellat rerum suscipit ullam vitae. A ab ad assumenda, consequuntur deserunt
         doloremque ea eveniet facere fuga illum in numquam quia reiciendis rem sequi tenetur veniam?</p>
-      <form>
+      <form onSubmit={handleSubmit}>
           <label htmlFor='userName'>
               Gebruikersnaam:
               <input type='text' id='userName' name='userName' placeholder='Geef uw gebruikersnaam in' />
@@ -28,7 +28,7 @@ function SignUp() {
               Wachtwoord:
               <input type="password" name='password' placeholder='Insert your password' />
           </label>
-          <button type='submit' onSubmit={handleSubmit}>Registreren</button>
+          <button type='submit'>Registreren</button>
 
       </form>
       <p>Heb je al een account? Je kunt je <Link to="/signin">hier</Link> inloggen.</p>

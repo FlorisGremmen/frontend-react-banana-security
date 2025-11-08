@@ -1,13 +1,12 @@
 import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
-import {AuthContext} from "../context/authentication/AuthContext";
+import { AuthContext } from "../context/authentication/AuthContext";
 
 function SignIn() {
-    const {login} = useContext(AuthContext);
+    const { login } = useContext(AuthContext);
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(e);
         login();
     }
 
@@ -16,7 +15,7 @@ function SignIn() {
       <h1>Inloggen</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
 
-      <form>
+      <form onSubmit={handleSubmit}>
           <label htmlFor='emailAddress'>
               Email:
               <input type="email" id='emailAddress' name='emailAddres' placeholder='Geef uw gebruikersnaam in' />
@@ -25,7 +24,7 @@ function SignIn() {
               Wachtwoord:
             <input type="password" name='password' placeholder='Insert your password' />
           </label>
-        <button type='submit' onSubmit={handleSubmit}>Inloggen</button>
+        <button type='submit'>Inloggen</button>
       </form>
 
       <p>Heb je nog geen account? <Link to="/signup">Registreer</Link> je dan eerst.</p>
