@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { AuthContext } from "./context/authentication/AuthContext";
+import AuthContextProvider from "./context/authentication/AuthContext";
 
 const data = {
     isAuth: false,
@@ -13,9 +13,9 @@ const data = {
 ReactDOM.render(
     <React.StrictMode>
         <Router>
-            <AuthContext.Provider value={data}>
+            <AuthContextProvider value={data}>
                 <App/>
-            </AuthContext.Provider>
+            </AuthContextProvider>
         </Router>
     </React.StrictMode>,
     document.getElementById('root')
